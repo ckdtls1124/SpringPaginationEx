@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>글상세보기</title>
+</head>
+<body>
+<h1>boardDetail</h1>
+<table border="1">
+  <tr>
+    <th>번호</th>
+    <th>제목</th>
+    <th>내용</th>
+    <th>작성자</th>
+    <th>비빌번호</th>
+    <th>조회수</th>
+    <th>작성시간</th>
+  </tr>
+  <tr>
+    <td th:text="${board.id}"></td>
+    <td th:text="${board.title}"></td>
+    <td th:text="${board.content}"></td>
+    <td th:text="${board.writer}"></td>
+    <td th:text="${board.boardPw}"></td>
+    <td th:text="${board.hit}"></td>
+    <td th:text="*{#temporals.format(board.createTime, 'yyyy년MM월dd일 HH시mm분ss초')}"></td>
+  </tr>
+  <tr>
+    <td colspan="8">
+      <a th:href="@{/board/index}">BOARD_HOME</a>
+      <a th:href="@{/board/write}">게시글작성</a>
+      <a th:href="@{/board/list}">글목록</a>
+    </td>
+  </tr>
+</table>
+</body>
+</html>
